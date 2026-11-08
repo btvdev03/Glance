@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Glance - Dịch Chuột Siêu Tốc & Thông Minh",
+  "short_name": "Glance",
+  "version": "1.2.0",
+  "description": "Dịch bôi đen tức thì với Glance. Nhận diện thông minh, tự bỏ qua tiếng mẹ đẻ, 100% miễn phí, từ điển chuyên sâu và phát âm bản xứ.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Cài đặt Glance"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "permissions": [
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://translate.googleapis.com/*",
+    "https://clients5.google.com/*",
+    "https://translate.google.com/*",
+    "https://api.mymemory.translated.net/*"
+  ]
+}

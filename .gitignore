@@ -1,0 +1,19 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs & Temporary files
+*.log
+*.tmp
+*.bak
+
+# Build & releases
+dist/
+*.zip
+!glance-extension.zip
+
+# Local scripts & credentials
+*.bat
+*.sh
+.env
